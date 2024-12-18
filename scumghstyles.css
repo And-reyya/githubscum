@@ -1,0 +1,118 @@
+/* Keresősáv (search-bar) stílus */
+.search-bar { 
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  display: flex; 
+  align-items: center; 
+  background-color: rgba(169, 169, 169, 0.5); /* Félig átlátszó szürke */ 
+  border-radius: 20px; 
+  padding: 5px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease; 
+} 
+
+.search-bar:hover { 
+  background-color: rgba(169, 169, 169, 0.7); /* Sötétebb árnyalat hover állapotban */ 
+} 
+
+.search-icon { 
+  font-size: 16px; /* Kisebb nagyító */ 
+  margin-right: 8px; 
+} 
+
+.search-input { 
+  border: none; 
+  outline: none; 
+  font-size: 14px; 
+  padding: 5px; 
+  background-color: transparent; /* Átlátszó háttér */ 
+  border-radius: 10px; 
+  width: 180px; 
+  height: 10px; /* 10px magas */ 
+  transition: width 0.3s ease; /* Animált szélesség */ 
+} 
+
+.search-input:focus { 
+  width: 220px; /* Szélesebb fókuszált állapotban */ 
+} 
+
+/* Dropdown stílusok (Első, második, harmadik, negyedik) */ 
+#pontdrop, #marikadrop, #tundedrop, #dropmonika { 
+  display: none; 
+  position: absolute; 
+  bottom: 100%; /* A keresősáv tetejével ér össze */ 
+  background-color: white; 
+  width: 180px; 
+  border-radius: 5px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+  max-height: 200px; 
+  overflow-y: auto; 
+  transition: opacity 0.3s ease; /* Animált megjelenés */ 
+  opacity: 0; 
+  z-index: 10; /* A dropdown legyen a keresősáv felett */ 
+} 
+
+/* Az aktivált dropdown megjelenítése */ 
+#pontdrop.show, #marikadrop.show, #tundedrop.show, #dropmonika.show { 
+  display: block; 
+  opacity: 1; 
+} 
+
+/* Dropdown elemek stílusa */ 
+.dropdown-item { 
+  font-size: 12px; /* Kisebb betűméret */ 
+  padding: 2px 8px; /* Csökkentett padding a függőleges távolság csökkentésére */ 
+  cursor: pointer; 
+  transition: background-color 0.2s ease; /* Animált háttérszín */ 
+  background-color: transparent; /* Alapértelmezett háttérszín */ 
+} 
+
+/* Hover állapot a dropdown elemeknél */ 
+.dropdown-item:hover { 
+  background-color: #f0f0f0; /* Világosabb háttér a hover állapotban */ 
+} 
+
+/* Aktív (kiválasztott) elem kiemelése átlátszó narancssárgával */ 
+.dropdown-item.selected { 
+  background-color: rgba(255, 165, 0, 0.3); /* Átlátszó narancssárga háttér */ 
+} 
+
+/* Kijelölés fókuszáláskor eltüntetése */ 
+.dropdown-item:focus { 
+  outline: none; /* Eltünteti a fókuszáláskor megjelenő körvonalat */ 
+  background-color: transparent; /* Eltünteti a háttérszínt a fókuszáláskor */ 
+} 
+
+/* A nyilakkal történő navigálás esetén a kijelölés színét eltüntetjük */ 
+.dropdown-item:active, .dropdown-item:focus-visible { 
+  outline: none; /* Eltünteti a fókuszálás körvonalát */ 
+  background-color: transparent; /* Eltünteti a háttérszínt */ 
+} 
+
+/* Keresősáv kiegészítő animációk */ 
+.search-input:focus + #pontdrop.show { 
+  display: block; /* A dropdown megjelenítése */ 
+  opacity: 1; 
+} 
+
+/* Alapértelmezett pozíció */ 
+#pontdrop, #marikadrop, #tundedrop, #dropmonika { 
+  position: absolute; 
+  bottom: 100%; /* A keresősáv tetejével ér össze */ 
+  background-color: white; 
+  width: 180px; 
+  border-radius: 5px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+  max-height: 200px; 
+  overflow-y: auto; 
+  display: none; 
+  transition: opacity 0.3s ease; 
+  opacity: 0; 
+} 
+
+/* A dropdown animációk befejeződése */ 
+#pontdrop.show, #marikadrop.show, #tundedrop.show, #dropmonika.show { 
+  display: block; 
+  opacity: 1; 
+}

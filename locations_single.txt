@@ -1,0 +1,10 @@
+Traider_car:
+#Teleport -614677.9411 -549598.5493 0
+
+Base:
+#Teleport 145509.3527 221643.1699 0
+
+
+
+Cash:
+#spawnitem Cash 10 CashValue 10000 1

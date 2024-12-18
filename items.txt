@@ -1,0 +1,384 @@
+{X=238290.406 Y=324264.000 Z=32303.840|P=316.771790 Y=348.708099 R=0.000000}
+
+
+
+scumamdata
+.9mm
+.45
+.357
+.38
+.50 AE
+.22
+.12 gauge
+.338
+.308
+.30-06
+.7.92x57
+.7.62x54
+.50 BMG
+.9x39
+.7.62x39
+.5.45x39
+.5.56x45
+
+scumpontamdata
+.9 = .9, vagy 9, vagy 9mm
+.44 = .44, vagy 44, vagy 44mm
+.45 = .45, vagy 45, vagy 45mm
+.357 = .357, vagy 357, vagy 357mm
+.38 = .38, vagy 38, vagy 38mm
+.50AE = .50AE, vagy 50AE, vagy 50 AE
+.50BMG = .50BMG, vagy 50BMG, vagy 50 BMG
+.22 = .22, vagy 22, vagy 22mm
+.12 = .12, vagy 12, vagy 12 Gauge
+.338 = .338, vagy 338, vagy 338mm
+.308 = .308, vagy 308, vagy 308mm
+.30-06 = .30-06, vagy 30-06, vagy 30-06mm
+7.92x57 = .7.92x57, vagy 7.92x57, vagy 7.92x57mm
+7.62x54 = .7.62x54, vagy 7.62x54, vagy 7.62x54mm
+9x39 = .9x39, vagy 9x39, vagy 9x39mm
+7.62x39 = .7.62x39, vagy 7.62x39, vagy 7.62x39mm
+5.45x39 = .5.45x39, vagy 5.45x39, vagy 5.45x39mm
+5.56x45 = .5.56x45, vagy 5.56x45, vagy 5.56x45mm
+
+Scumammtoweadata
+
+.22
+    Hunter 85
+    Improvised Handgun
+    Krueger
+
+
+
+.30-06
+
+    Carbon Hunter
+    M1 Rifle
+    Improvised Rifle
+
+.308
+
+    AWP
+    SCAR-DMR
+    Improvised Rifle
+
+.338
+
+    AWM
+    Improvised Rifle
+
+.357
+
+    Desert Eagle .357
+    Improvised Handgun
+    Serpent 357
+    Viper M357
+
+.38
+
+    Improvised Handgun
+    Peacekeeper 38
+
+.44
+
+    Improvised Handgun
+    Judge.44
+
+.45
+
+    Improvised Handgun
+
+.45 ACP
+
+    Block 21
+    M1911
+    UMP-45
+
+.50 AE
+
+    Desert Eagle .50
+    Improvised Handgun
+
+.50 BMG
+
+    M82A1
+
+12 Gauge
+
+    DT11B
+    M1887
+    M1887 Sawed-off
+    SDASS 12M
+    TEC01 490
+    The Mule DT11B Short
+    Improvised Rifle
+
+5.45x39mm
+
+    AKS-74U
+    Improvised Rifle
+
+5.56x45mm
+
+    M16A4
+    M249
+    MK18
+    SCAR-L
+    VHS-2
+    VHS-2 CT
+    Improvised Rifle
+
+7.62x39mm
+
+    AK-15
+    AK-47
+    AKM
+    RPK
+    Improvised Rifle
+
+7.62x54mm
+
+    M1891
+    SVD
+    Improvised Rifle
+
+7.92x57mm
+
+    Kar98
+    Improvised Rifle
+
+9mm
+
+    HS SF19
+    HS-9
+    Improvised Handgun
+    MAC-10
+    MP5
+    MP5 K
+    MP5 SD
+    TEC01 M9
+
+9x39mm
+
+    AS Val/VSS
+    Improvised Rifle
+
+
+Magazine
+
+HS SF19
+Block 21
+Hs-9
+M9
+M1911
+Krueger
+Deagle .50
+Deagle .357
+AWM
+AWP
+Carbon Hunter
+M1 Clip
+M82A1
+SVD
+AS Val-VSS
+AK-15
+AK-47
+RPK
+AKS-74U
+M16
+M249
+MP5
+UMP-45
+VHS
+SCAR-DMR
+MAC-10
+
+
+scumweadata
+
+HS SF19
+Block 21
+HS-9
+TEC01 M9
+M1911
+Serpent 357
+Peacekeeper 38
+Viper M357
+Krueger
+Improvised Handgun
+Improvised Rifle
+Deagle .50
+Deagle .357
+Judge .44
+The Mule DT11B Short
+DT11B
+M1887 Saved off
+M1887
+SDASS 12M
+TEC01 490
+AWM
+AWP
+Carbon Hunter
+Hunter 85
+Kar98
+M1 Rifle
+M1891
+M82A1
+SVD
+VSS VZ
+AK-15
+AK-47
+AKM
+AKS-74U
+AS Val-VSS
+M16A4
+M249
+MK18
+MP5 K
+MP5 SD
+MP5
+RPK
+UMP-45
+VHS 2 
+VHS 2  CT
+SCAR- DMR
+SCAR-L
+MAC-10
+
+
+
+Sight/Scope
+
+Pistol sight
+
+Desert Eagle Red Dot
+Sentry RDRS
+Shark Reflex
+Snake Reflex
+Wasp Reflex
+
+Own Scope
+
+Hunting
+ZF39
+M1
+M1 experimental
+PU Scope
+M82
+POSP 4x24
+M16A4 Folding
+Integrated
+SpektralIDR
+
+Sight with Rail
+
+AimPRO Red Dot
+Desert Eagle Red Dot
+MRO Red Dot
+Red Dot
+OKP Holographic
+V3 Holographic
+XPS Holographic
+AimPRO Red Dot (IS) (IL)
+MRO Red Dot (IS) (IL)
+Red Dot (IS) (IL)
+OKP Holographic (IS) (IL)
+Desert Eagle Red Dot (IS) (IL)
+AimPRO Red Dot (IS) (RIS)
+MRO Red Dot (IS) (RIS)
+Red Dot (IS) (RIS)
+OKP Holographic (IS) (RIS)
+Desert Eagle Red Dot (IS) (RIS)
+AimPRO Red Dot (IS) (MP5)
+MRO Red Dot (IS) (MP5)
+OKP Holographic (IS) (MP5)
+Red Dot (IS) (MP5)
+Desert Eagle Red Dot (IS) (MP5)
+ACOG
+SpektraIDR
+
+
+
+Scope
+
+
+ACOG
+M82
+P-223
+Vampyre
+SpekrtaIDR
+Improvised
+AimPRO Red Dot
+MRO Red Dot
+OKP Holographic
+Desert Eagle Red Dot
+Red Dot
+V3 Holographic
+XPS Holographic
+ACOG (IR)
+Improvised (IR)
+M82 (IR)
+P-223 (IR)
+AimPRO Red Dot (IR)
+Desert Eagle Red Dot (IR)
+ACOG (IL) (RIS)
+Improvised (IL) (RIS)
+M82 (IL) (RIS)
+P-223 (IL) (RIS)
+Vampyre (IL) (RIS)
+V3 Holographic (IL) (RIS)
+XPS Holographic (IL) (RIS)
+SpekrtaIDR (IL) (RIS)
+ACOG (RIS)
+Improvised (RIS)
+M82 (RIS)
+P-223 (RIS)
+Vampyr (RIS)
+V3 Holographic (RIS)
+XPS Holographic (RIS)
+SpekrtaIDR (RIS)
+Vampyr
+SpektralIDR
+ACOG (MP5)
+Vampyre (MP5)
+SpektralIDR (MP5)
+V3 Holographic (MP5)
+XPS Holographic (MP5)
+
+
+Rail
+
+M1911 (M1911)
+Viper M357 (VIPM357)
+Improvised Short (IS)
+Improvised Long (IL)
+Impprovised Rifle (IR)
+Ris Adapter (RIS)
+MP5 (MP5)
+
+Flashlight
+
+Improvised
+M9
+Desert Eagle
+As Val-VSS
+
+Suppressor
+
+Handgun suppressor
+45 ACP
+12 Gauge
+.338
+.308
+.30-06
+Hunter
+Kar98
+M1 Flash Hider: M1
+M1891
+M82
+SVD
+Integrated
+AK15
+5.45x39
+MK18
+MP5
