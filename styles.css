@@ -37,8 +37,8 @@
   width: 220px; /* Szélesebb fókuszált állapotban */ 
 } 
 
-/* Dropdown stílusok (Első, második, harmadik, negyedik) */ 
-#pontdrop, #marikadrop, #tundedrop, #dropmonika { 
+/* Dropdown stílusok (Első, második, harmadik, negyedik, ötödik, hatodik) */ 
+#pontdrop, #marikadrop, #tundedrop, #dropmonika, #vikidrop, #dalmadrop { 
   display: none; 
   position: absolute; 
   bottom: 100%; /* A keresősáv tetejével ér össze */ 
@@ -54,7 +54,7 @@
 } 
 
 /* Az aktivált dropdown megjelenítése */ 
-#pontdrop.show, #marikadrop.show, #tundedrop.show, #dropmonika.show { 
+#pontdrop.show, #marikadrop.show, #tundedrop.show, #dropmonika.show, #vikidrop.show, #dalmadrop.show { 
   display: block; 
   opacity: 1; 
 } 
@@ -97,7 +97,7 @@
 } 
 
 /* Alapértelmezett pozíció */ 
-#pontdrop, #marikadrop, #tundedrop, #dropmonika { 
+#pontdrop, #marikadrop, #tundedrop, #dropmonika, #vikidrop, #dalmadrop { 
   position: absolute; 
   bottom: 100%; /* A keresősáv tetejével ér össze */ 
   background-color: white; 
@@ -112,7 +112,7 @@
 } 
 
 /* A dropdown animációk befejeződése */ 
-#pontdrop.show, #marikadrop.show, #tundedrop.show, #dropmonika.show { 
+#pontdrop.show, #marikadrop.show, #tundedrop.show, #dropmonika.show, #vikidrop.show, #dalmadrop.show { 
   display: block; 
   opacity: 1; 
 }
