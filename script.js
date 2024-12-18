@@ -1,1 +1,237 @@
-fetch("https://raw.githubusercontent.com/And-reyya/scumtools/main/scumdata.json").then(e=>e.json()).then(e=>{let t=e.scumjancsi,scumbela=e.scumbela,l=document.querySelector(".search-input"),n=document.querySelector("#pontdrop"),s=document.querySelector("#marikadrop"),a=document.querySelector("#tundedrop"),dropmonika=document.querySelector("#dropmonika"),vikiDrop=document.querySelector("#vikidrop"),o=-1,r=-1,i=-1,m=-1,d=-1;function c(e,t){e.forEach((e,l)=>{e.classList.remove("selected"),l===t&&(e.classList.add("selected"),e.scrollIntoView({block:"nearest"}))})}function p(e){let t=["WEAPON","MAGAZINE"];s.innerHTML="",t.forEach(e=>{let t=document.createElement("div");t.textContent=e,t.classList.add("dropdown-item"),s.appendChild(t),t.addEventListener("click",()=>{d=e,u(e),s.style.display="none"})}),t.length>0&&(s.style.display="block",s.classList.add("show"),s.setAttribute("tabindex","0"),s.focus())}function u(e){if(e==="MAGAZINE"){showMagazines()}else{let n=t.find(item=>item.ammo.replace(".","")===l.value.replace(".",""))?.weapon||[];a.innerHTML="",n.forEach(e=>{let t=document.createElement("div");t.textContent=e,t.classList.add("dropdown-item"),a.appendChild(t),t.addEventListener("click",()=>{let t=l.value;l.value=t?`${t}; ${e}`:e,l.focus(),a.style.display="none",s.style.display="none"})}),n.length>0&&(a.style.display="block",a.classList.add("show"),a.setAttribute("tabindex","0"),a.focus())}}function showMagazines(){fetch("https://raw.githubusercontent.com/And-reyya/scummonika/main/scummonika.json").then(e=>e.json()).then(e=>{let magazines=[];if(l.value){const selectedAmmo=e.scummonika.find(item=>item.ammo.replace(".","")===l.value.replace(".",""));magazines=selectedAmmo?selectedAmmo.magazine:[]}dropmonika.innerHTML="";magazines.forEach(magazine=>{let t=document.createElement("div");t.textContent=magazine;t.classList.add("dropdown-item");t.style.display="block";dropmonika.appendChild(t);t.addEventListener("click",()=>{let t=l.value;l.value=t?`${t}; ${magazine}`:magazine;l.focus();dropmonika.style.display="none",s.style.display="none"})});if(magazines.length>0){dropmonika.style.display="block";dropmonika.classList.add("show");dropmonika.setAttribute("tabindex","0");dropmonika.focus()}else{dropmonika.style.display="none"}}).catch(e=>{console.error("Hiba a JSON betöltésekor:",e)})}function showBela(e){let filteredWeapons=scumbela.filter(weapon=>weapon.toLowerCase().startsWith(e.toLowerCase()));vikiDrop.innerHTML="";filteredWeapons.forEach(weapon=>{let t=document.createElement("div");t.textContent=weapon;t.classList.add("dropdown-item");vikiDrop.appendChild(t);t.addEventListener("click",()=>{l.value=weapon;vikiDrop.style.display="none"})});filteredWeapons.length>0&&(vikiDrop.style.display="block",vikiDrop.classList.add("show"));if(filteredWeapons.length===0){vikiDrop.style.display="none"}}l.addEventListener("focus",function(){""!==n.innerHTML&&n.classList.add("show")}),l.addEventListener("blur",function(){setTimeout(()=>{n.classList.remove("show")},200)}),l.addEventListener("input",function(){let e=l.value.toLowerCase().replace(".","");o=-1;let s;if(l.value.startsWith("."))s=t.filter(t=>t.ammo.replace(".", "").startsWith(e));else if(""===e){n.style.display="none";vikiDrop.style.display="none";return}else s=t.filter(t=>t.ammo.replace(".", "").toLowerCase().startsWith(e));n.innerHTML="",s.forEach((e,t)=>{let s=document.createElement("div");s.textContent=e.ammo,s.classList.add("dropdown-item"),n.appendChild(s),s.addEventListener("click",()=>{l.value=e.ammo,n.style.display="none",p(e.ammo)})}),s.length>0?(n.style.display="block",n.classList.add("show")):(n.style.display="none",n.classList.remove("show"));showBela(l.value)}),l.addEventListener("keydown",function(e){let t=n.querySelectorAll(".dropdown-item");let vk=vikiDrop.querySelectorAll(".dropdown-item");if("block"===n.style.display&&t.length>0)"ArrowDown"===e.key?(e.preventDefault(),o=(o+1)%t.length,c(t,o)):"ArrowUp"===e.key?(e.preventDefault(),o=(o-1+t.length)%t.length,c(t,o)):"Enter"===e.key&&(e.preventDefault(),o>=0&&o<t.length&&t[o].click());else if("block"===vikiDrop.style.display&&vk.length>0)"ArrowDown"===e.key?(e.preventDefault(),d=(d+1)%vk.length,c(vk,d)):"ArrowUp"===e.key?(e.preventDefault(),d=(d-1+vk.length)%vk.length,c(vk,d)):"Enter"===e.key&&(e.preventDefault(),d>=0&&d<vk.length&&vk[d].click());else if("Backspace"===e.key){if(l.value.includes(";")){let s=l.value.split(";");s.pop(),l.value=s.join(";");if(l.value===""){vikiDrop.style.display="none"}}else{l.value="";vikiDrop.style.display="none"}}}),s.addEventListener("keydown",function(e){let t=s.querySelectorAll(".dropdown-item");"block"===s.style.display&&t.length>0&&("ArrowDown"===e.key?(e.preventDefault(),r=(r+1)%t.length,c(t,r)):"ArrowUp"===e.key?(e.preventPreventDefault, r = (r-1+t.length)%t.length, c(t, r)) : "Enter"===e.key && (e.preventDefault(), r>=0&&r<t.length && (t[r].click(), s.style.display="none")))}),a.addEventListener("keydown",function(e){let t=a.querySelectorAll(".dropdown-item");"block"===a.style.display&&t.length>0&&("ArrowDown"===e.key?(e.preventDefault(),i=(i+1)%t.length,c(t,i)):"ArrowUp"===e.key?(e.preventDefault(),i=(i-1+t.length)%t.length,c(t,i)):"Enter"===e.key&&(e.preventDefault(),i>=0&&i<t.length&&(t[i].click(),a.style.display="none")))}),dropmonika.addEventListener("keydown",function(e){let t=dropmonika.querySelectorAll(".dropdown-item");"block"===dropmonika.style.display&&t.length>0&&("ArrowDown"===e.key?(e.preventDefault(),m=(m+1)%t.length,c(t,m)):"ArrowUp"===e.key?(e.preventDefault(),m=(m-1+t.length)%t.length,c(t,m)):"Enter"===e.key&&(e.preventDefault(),m>=0&&m<t.length&&t[m].click(),dropmonika.style.display="none"))}),vikiDrop.addEventListener("keydown",function(e){let t=vikiDrop.querySelectorAll(".dropdown-item");"block"===vikiDrop.style.display&&t.length>0&&("ArrowDown"===e.key?(e.preventDefault(),d=(d+1)%t.length,c(t,d)):"ArrowUp"===e.key?(e.preventDefault(),d=(d-1+t.length)%t.length,c(t,d)):"Enter"===e.key&&(e.preventDefault(),d>=0&&d<t.length&&t[d].click(),vikiDrop.style.display="none"))})}).catch(e=>{console.error("Hiba a JSON betöltésekor:",e)});
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("https://raw.githubusercontent.com/And-reyya/scumtools/main/scumdata.json")
+        .then((response) => response.json())
+        .then((data) => {
+            let weaponsData = data.scumjancsi;
+            let otherData = data.scumbela;
+            let searchInput = document.querySelector(".search-input");
+            let ammoDropdown = document.querySelector("#pontdrop");
+            let categoryDropdown = document.querySelector("#marikadrop");
+            let weaponDropdown = document.querySelector("#tundedrop");
+            let magazineDropdown = document.querySelector("#dropmonika");
+            let otherDropdown = document.querySelector("#vikidrop");
+
+            let selectedAmmoIndex = -1;
+            let selectedCategoryIndex = -1;
+            let selectedWeaponIndex = -1;
+            let selectedMagazineIndex = -1;
+            let selectedOtherIndex = -1;
+
+            function highlightSelection(items, index) {
+                items.forEach((item, i) => {
+                    item.classList.remove("selected");
+                    if (i === index) {
+                        item.classList.add("selected");
+                        item.scrollIntoView({ block: "nearest", behavior: "smooth" });
+                    }
+                });
+            }
+
+            function populateCategoryDropdown() {
+                let categories = ["WEAPON", "MAGAZINE"];
+                categoryDropdown.innerHTML = "";
+                categories.forEach((category) => {
+                    let div = document.createElement("div");
+                    div.textContent = category;
+                    div.classList.add("dropdown-item");
+                    categoryDropdown.appendChild(div);
+                    div.addEventListener("click", () => {
+                        handleCategorySelection(category);
+                        categoryDropdown.style.display = "none";
+                    });
+                });
+                if (categories.length > 0) {
+                    categoryDropdown.style.display = "block";
+                    categoryDropdown.classList.add("show");
+                    categoryDropdown.setAttribute("tabindex", "0");
+                    categoryDropdown.focus();
+                }
+            }
+
+            function handleCategorySelection(category) {
+                if (category === "MAGAZINE") {
+                    showMagazines();
+                } else {
+                    let matchingWeapons =
+                        weaponsData
+                            .find((item) => item.ammo.replace(".", "") === searchInput.value.replace(".", ""))
+                            ?.weapon || [];
+                    weaponDropdown.innerHTML = "";
+                    matchingWeapons.forEach((weapon) => {
+                        let div = document.createElement("div");
+                        div.textContent = weapon;
+                        div.classList.add("dropdown-item");
+                        weaponDropdown.appendChild(div);
+                        div.addEventListener("click", () => {
+                            searchInput.value += searchInput.value ? `; ${weapon}` : weapon;
+                            searchInput.focus();
+                            weaponDropdown.style.display = "none";
+                            categoryDropdown.style.display = "none";
+                        });
+                    });
+                    if (matchingWeapons.length > 0) {
+                        weaponDropdown.style.display = "block";
+                        weaponDropdown.classList.add("show");
+                        weaponDropdown.setAttribute("tabindex", "0");
+                        weaponDropdown.focus();
+                    }
+                }
+            }
+
+            function showMagazines() {
+                fetch("https://raw.githubusercontent.com/And-reyya/scummonika/main/scummonika.json")
+                    .then((response) => response.json())
+                    .then((magazineData) => {
+                        let magazines = [];
+                        if (searchInput.value) {
+                            const selectedAmmo = magazineData.scummonika.find(
+                                (item) => item.ammo.replace(".", "") === searchInput.value.replace(".", "")
+                            );
+                            magazines = selectedAmmo ? selectedAmmo.magazine : [];
+                        }
+                        magazineDropdown.innerHTML = "";
+                        magazines.forEach((magazine) => {
+                            let div = document.createElement("div");
+                            div.textContent = magazine;
+                            div.classList.add("dropdown-item");
+                            magazineDropdown.appendChild(div);
+                            div.addEventListener("click", () => {
+                                searchInput.value += searchInput.value ? `; ${magazine}` : magazine;
+                                searchInput.focus();
+                                magazineDropdown.style.display = "none";
+                                categoryDropdown.style.display = "none";
+                            });
+                        });
+                        if (magazines.length > 0) {
+                            magazineDropdown.style.display = "block";
+                            magazineDropdown.classList.add("show");
+                            magazineDropdown.setAttribute("tabindex", "0");
+                            magazineDropdown.focus();
+                        } else {
+                            magazineDropdown.style.display = "none";
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error loading magazine JSON:", error);
+                    });
+            }
+
+            function filterWeapons(inputValue) {
+                let filteredWeapons = otherData.filter((weapon) =>
+                    weapon.toLowerCase().startsWith(inputValue.toLowerCase())
+                );
+                otherDropdown.innerHTML = "";
+                filteredWeapons.forEach((weapon) => {
+                    let div = document.createElement("div");
+                    div.textContent = weapon;
+                    div.classList.add("dropdown-item");
+                    otherDropdown.appendChild(div);
+                    div.addEventListener("click", () => {
+                        searchInput.value = weapon;
+                        otherDropdown.style.display = "none";
+                    });
+                });
+                if (filteredWeapons.length > 0) {
+                    otherDropdown.style.display = "block";
+                    otherDropdown.classList.add("show");
+                } else {
+                    otherDropdown.style.display = "none";
+                }
+            }
+
+            searchInput.addEventListener("input", () => {
+                let inputValue = searchInput.value.toLowerCase().replace(".", "");
+                selectedAmmoIndex = -1;
+                let filteredAmmo;
+                if (searchInput.value.startsWith(".")) {
+                    filteredAmmo = weaponsData.filter((item) =>
+                        item.ammo.replace(".", "").startsWith(inputValue)
+                    );
+                } else if (inputValue === "") {
+                    ammoDropdown.style.display = "none";
+                    otherDropdown.style.display = "none";
+                    return;
+                } else {
+                    filteredAmmo = weaponsData.filter((item) =>
+                        item.ammo.replace(".", "").toLowerCase().startsWith(inputValue)
+                    );
+                }
+                ammoDropdown.innerHTML = "";
+                filteredAmmo.forEach((ammo) => {
+                    let div = document.createElement("div");
+                    div.textContent = ammo.ammo;
+                    div.classList.add("dropdown-item");
+                    ammoDropdown.appendChild(div);
+                    div.addEventListener("click", () => {
+                        searchInput.value = ammo.ammo;
+                        ammoDropdown.style.display = "none";
+                        populateCategoryDropdown();
+                    });
+                });
+                if (filteredAmmo.length > 0) {
+                    ammoDropdown.style.display = "block";
+                    ammoDropdown.classList.add("show");
+                } else {
+                    ammoDropdown.style.display = "none";
+                    ammoDropdown.classList.remove("show");
+                }
+                filterWeapons(searchInput.value);
+            });
+
+            searchInput.addEventListener("keydown", (event) => {
+                let ammoItems = ammoDropdown.querySelectorAll(".dropdown-item");
+                let categoryItems = categoryDropdown.querySelectorAll(".dropdown-item");
+                let weaponItems = weaponDropdown.querySelectorAll(".dropdown-item");
+
+                if (ammoDropdown.style.display === "block" && ammoItems.length > 0) {
+                    if (event.key === "ArrowDown") {
+                        event.preventDefault();
+                        selectedAmmoIndex = (selectedAmmoIndex + 1) % ammoItems.length;
+                        highlightSelection(ammoItems, selectedAmmoIndex);
+                    } else if (event.key === "ArrowUp") {
+                        event.preventDefault();
+                        selectedAmmoIndex = (selectedAmmoIndex - 1 + ammoItems.length) % ammoItems.length;
+                        highlightSelection(ammoItems, selectedAmmoIndex);
+                    } else if (event.key === "Enter") {
+                        event.preventDefault();
+                        if (selectedAmmoIndex >= 0 && selectedAmmoIndex < ammoItems.length) {
+                            ammoItems[selectedAmmoIndex].click();
+                        }
+                    }
+                } else if (categoryDropdown.style.display === "block" && categoryItems.length > 0) {
+                    if (event.key === "ArrowDown") {
+                        event.preventDefault();
+                        selectedCategoryIndex = (selectedCategoryIndex + 1) % categoryItems.length;
+                        highlightSelection(categoryItems, selectedCategoryIndex);
+                    } else if (event.key === "ArrowUp") {
+                        event.preventDefault();
+                        selectedCategoryIndex = (selectedCategoryIndex - 1 + categoryItems.length) % categoryItems.length;
+                        highlightSelection(categoryItems, selectedCategoryIndex);
+                    } else if (event.key === "Enter") {
+                        event.preventDefault();
+                        if (selectedCategoryIndex >= 0 && selectedCategoryIndex < categoryItems.length) {
+                            categoryItems[selectedCategoryIndex].click();
+                        }
+                    }
+                } else if (weaponDropdown.style.display === "block" && weaponItems.length > 0) {
+                    if (event.key === "ArrowDown") {
+                        event.preventDefault();
+                        selectedWeaponIndex = (selectedWeaponIndex + 1) % weaponItems.length;
+                        highlightSelection(weaponItems, selectedWeaponIndex);
+                    } else if (event.key === "ArrowUp") {
+                        event.preventDefault();
+                        selectedWeaponIndex = (selectedWeaponIndex - 1 + weaponItems.length) % weaponItems.length;
+                        highlightSelection(weaponItems, selectedWeaponIndex);
+                    } else if (event.key === "Enter") {
+                        event.preventDefault();
+                        if (selectedWeaponIndex >= 0 && selectedWeaponIndex < weaponItems.length) {
+                            weaponItems[selectedWeaponIndex].click();
+                        }
+                    }
+                }
+            });
+        })
+        .catch((error) => {
+            console.error("Error loading JSON:", error);
+        });
+});
